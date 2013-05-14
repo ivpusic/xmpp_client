@@ -206,7 +206,7 @@ var XMPP_client = {
             }
 
             /*
-             * eg. of id variable: ivan (this is actualy name of user without domain name, eg: nodehalla.com)
+             * eg. of id variable: ivan (this is actualy name of user without domain name
              */
             var id = Strophe.getNodeFromJid(jid);
 
@@ -372,7 +372,7 @@ function enableButtons(){
 /*
  *  Function for appending last messages recieved from server in the conversation with user 'jid'
  *  messages: list of messages
- *  jid: last conversation with user (eg: sam@nodehalla.com)
+ *  jid: last conversation with user 
  */
 function appendMessages(messages, jid){
     var jid_id = XMPP_client.jid_to_id(jid);
@@ -413,7 +413,7 @@ function appendMessages(messages, jid){
 
 /*
  * Method for getting messages for user from server
- * jid: user (eg: ivan@nodehalla.com)
+ * jid: user 
  */
 function getMessages(jid){
     $.ajax({
@@ -678,7 +678,7 @@ $(document).ready(function () {
     });
 
 
-    // connect to nodehalla
+    // connect to server
     if(credentials.autenticated)
     {
         /*
@@ -961,9 +961,7 @@ $(document).ready(function () {
         var classList = $(this).find(".roster-jid").attr('class').split(/\s+/);
         var jid;
         $.each( classList, function(index, item){
-            /*
-             * TODO: Change this with @nodehalla.com
-             */
+
             if (item.indexOf("@") != -1) {
                 jid = item;
             }
