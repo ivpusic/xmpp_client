@@ -1,0 +1,125 @@
+{% load i18n %}
+{% load bootstrap_tags %}
+{% load staticfiles %}
+
+{% block head_title %}{% trans "Welcome" %}{% endblock %}
+
+{% block body_class %}home{% endblock %}
+
+{% block extra_script %}
+<script src="{% static "js/strophe.js" %}"></script>
+<script src="{% static "js/XMPPclient.js" %}"></script>
+{% endblock %}
+
+{% block body %}
+
+
+<div id="sub_nav" class="navbar">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <li class="active">
+	<a href="#news"data-toggle="tab">
+	  <i class="icon-home">
+	  </i> News
+	</a>
+      </li>
+      <li>
+	<a href="#interests" data-toggle="tab">
+	  <i class="icon-eye-open">
+	  </i> Interests
+	</a>
+      </li>
+      <li>
+	<a href="#streams" data-toggle="tab">
+	  <i class="icon-th-list">
+	  </i> Streams
+	</a>
+      </li>
+      <li>
+	<a href="#nodes" data-toggle="tab">
+	  <i class="icon-tasks">
+	  </i> Nodes
+	</a>
+      </li>
+      <li>
+	<a href="#connections" data-toggle="tab">
+	  <i class="icon-globe">
+	  </i> Connections
+	</a>
+      </li>
+    </ul>
+    <form class="navbar-form pull-right" action="">
+      <input type="text" class="span4 search-query" placeholder="search for nodes, streams or people">
+    </form>
+  </div>    
+</div>
+
+
+<h1>XMPP chat !</h1>
+
+<div id='toolbar'>
+  
+  <div class="btn-group">
+<table  align="center">
+    <tr>
+	<td>
+	    <button type="button" class="btn btn-primary" id="new-contact" >Add contact</button>
+	</td>
+	<td>
+	    <select name="status" class="default" id="statusSelect" tabindex="2">
+		<option value="chat">Available</option>
+		<option value="away">Away</option>
+		<option value="dnd">Do Not Disturb</option>
+		<option value="xa">eXtended Away</option>
+	    </select>
+	</td>
+	<td>
+	    <div class="statusColor"></div>
+	</td>
+    </tr>
+</table>
+  </div>
+
+  <div id="chatAlertArea"></div>
+</div>
+
+<div id="chat-area">
+  <ul class="active-chats"></ul>
+</div>
+
+<input type=hidden id="chatPage" name="chatPage" 
+       value="true"/>
+
+    <div class="modal hide fade" id="addContact" tabindex="-1" role="dialog">
+      <div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	<h3 id="myModalLabel">Add new contact</h3>
+      </div>
+      <div class="modal-body">
+	<label>JID:</label><input type='text' id='contact-jid'>
+	<label>Name:</label><input type='text' id='contact-name'>
+      </div>
+      <div class="modal-footer">
+	<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+	<button id="btnAddContact" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+
+
+    <div class="modal hide fade" id="approve_dialog" tabindex="-1" role="dialog">
+      <div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	<h3 id="myModalLabel">Approve contact</h3>
+      </div>
+      <div class="modal-body">
+	<p><span id='approve-jid'></span> has requested a subscription
+	  to your presence.  Approve or deny?</p>
+      </div>
+      <div class="modal-footer">
+	<button class="btn btn-primary" data-dismiss="modal" id="btnApprove" aria-hidden="true">Approve</button>
+	<button id="btnDeny" class="btn">Deny</button>
+      </div>
+    </div>
+
+
+    {% endblock %}

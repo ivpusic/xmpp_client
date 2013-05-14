@@ -1,0 +1,187 @@
+body {
+    font-family: Helvetica;
+}
+
+h1 {
+    text-align: center;
+}
+
+.hidden {
+    display: none
+}
+
+.button {
+    padding: 10px;
+    background-color: #ddd;
+    border: solid 1px #666;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #ddf;
+}
+
+#toolbar {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#chat-area {
+    float: left;
+    width: 800px;
+    height: 400px;
+}
+
+.chat-messages {
+    height: 350px;
+    border-bottom: solid 2px #ddd;
+    overflow: auto;
+}
+
+#chat-area input {
+    margin-top: 10px;
+    width: 95%;
+}
+
+.roster-area {
+    padding: 0;
+    margin: 0;
+    width: 290px;
+    height: 45%;
+}
+
+.roster-area ul{
+    width: 270px;
+    height: 100%;
+    border: 1px solid #ccc;
+    padding: 0;
+    margin: 0;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.chat-name {
+    color: #c33;
+}
+
+.chat-message .me {
+    color: #33c;
+}
+
+.chat-event {
+    font-style: italic;
+    font-size: 75%;
+}
+
+.roster-contact {
+    padding: 3px;
+}
+
+.roster-contact:hover {
+    background-color: #aaa;
+    color: white;
+}
+
+.roster-name {
+    font-size: 150%;
+}
+
+.online {
+    color: #3c3;
+}
+
+.away {
+    color: #c33;
+}
+
+.offline {
+    color: #ccc;
+}
+
+#chatDialog{
+    width: 260px;
+}
+
+#loginModal{
+    width: 260px;
+}
+
+#addContact{
+    width: 260px;
+}
+
+.has_noty {
+    position:absolute;  
+    top: -6px;
+    min-width: 5px;
+    right:-3px;
+    padding:1px 2px 1px 2px;
+    background-color:red; /* you could use a background image if you'd like as well */
+    color:white;
+    font-weight:bold;
+    font-size:0.7em;
+
+    /* The following is CSS3, but isn't crucial for this technique to work. */
+    /* Keep in mind that if a browser doesn't support CSS3, it's fine! They just won't have rounded borders and won't have a box shadow effect. */
+    /* You can always use a background image to produce the same effect if you want to, and you can use both together so browsers without CSS3 still have the rounded/shadow look. */
+    border-radius:30px;
+    box-shadow:1px 1px 1px gray;
+}
+
+#noti_Container {
+    position:relative;     /* This is crucial for the absolutely positioned element */
+
+}
+
+.chat-button{
+
+    margin-top: 10px;
+}
+
+#new-messages{
+    min-height: 50%;
+    height: 50%;
+}
+
+#new-messages-list {
+    width: 270px;
+    min-height: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    padding: 0;
+    margin: 0;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.new-message {
+    padding-top: 3px;
+    width: 90%;
+    font-family: "lucida grande", tahoma, verdana, arial, sans-serif;  
+    font-size: 19px;
+}
+
+.new-message:hover {
+    background-color: #524D4D;
+}
+
+#chat_window{
+    height: 100%;
+}
+
+button.close{
+    width: 10%;
+    height: 100%;
+    background: white;
+    margin-top: -20px;
+}
+
+#dk_container_statusSelect a{
+    margin-top: 15px;
+}
+
+.statusColor{
+    margin-top: -4px;
+    width: 28px;
+    height: 28px;
+}
