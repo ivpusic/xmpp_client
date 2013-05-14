@@ -260,7 +260,7 @@ var XMPP_client = {
             XMPP_client.scroll_chat(jid_id);
         }
 
-        return true;
+        return connection;
     },
 
     scroll_chat: function (jid_id) {
